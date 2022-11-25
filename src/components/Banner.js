@@ -14,7 +14,7 @@ align-items: center;
 justify-content: center;
 position: absolute;
 top: 0;
-bottom: 0;
+bottom: 50px;
 left: ${(props) => props.direction === "left" && "10px"};
 right: ${(props) => props.direction === "right" && "10px"};
 margin: auto;
@@ -23,8 +23,8 @@ opacity: 0.5;
 z-index: 2;
 `;
 
-const Wrapper = styled.div`
-  height: 100%;
+const ForBanner = styled.div`
+  height: 50%;
   display: flex;
   transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
@@ -47,16 +47,16 @@ const Banner = () => {
         }
     };
     return (
-        <div className='flex' style={{ width: '100%', overflow: 'hidden', height: '100vh', position: 'relative' }}>
+        <div className='flex' style={{ width: '100%', overflow: 'hidden', height: '60vh', position: 'relative' }}>
             <Arrow direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlinedIcon />
             </Arrow>
-            <Wrapper slideIndex={slideIndex}>
+            <ForBanner slideIndex={slideIndex}>
                 <Slide>
-                    <div style={{ height: '100%', flex: '1' }}>
-                        <img style={{ height: '80%' }} src="https://i.ibb.co/18KD4NJ/painting-woman-floral-summer-dress-isolated-transparent-background-176765-27-removebg-preview.jpg" alt='' />
+                    <div style={{ height: '80%', flex: '1' }}>
+                        <img className='ml-20' style={{ height: '50%' }} src="https://i.ibb.co/18KD4NJ/painting-woman-floral-summer-dress-isolated-transparent-background-176765-27-removebg-preview.jpg" alt='' />
                     </div>
-                    <div className='p-10' style={{ flex: '1' }}>
+                    <div className='pr-36 pb-72' style={{ flex: '1' }}>
                         <h1 className="text-6xl font-bold">Summer Sale</h1>
                         <p className='m-10 text-xl font-semibold'>Let's buy accouding to your choice.</p>
                         <button className='btn btn-active btn-secondary'>Shop Now</button>
@@ -64,10 +64,10 @@ const Banner = () => {
                 </Slide>
 
                 <Slide>
-                    <div style={{ height: '100%', flex: '1' }}>
-                        <img style={{ height: '80%' }} src='https://i.ibb.co/0fTDvnx/png-clipart-dress-evening-gown-prom-formal-wear-dress-floral-fashion-removebg-preview.jpg' alt='' />
+                    <div style={{ height: '80%', flex: '1' }}>
+                        <img className='ml-20' style={{ height: '50%' }} src='https://i.ibb.co/TY4Z80B/15-3.png' alt='' />
                     </div>
-                    <div className='p-10' style={{ flex: '1' }}>
+                    <div className='pr-36 pb-72' style={{ flex: '1' }}>
                         <h1 className="text-6xl font-bold">Spring Sale</h1>
                         <p className='m-10 text-xl font-semibold'>Let's buy accouding to your choice.</p>
                         <button className='btn btn-active btn-secondary'>Shop Now</button>
@@ -75,16 +75,16 @@ const Banner = () => {
                 </Slide>
 
                 <Slide>
-                    <div style={{ height: '100%', flex: '1' }}>
-                        <img style={{ height: '80%' }} src="https://i.ibb.co/DkY6dmX/winter-whites-outfit-19-of-27-1600x2422-removebg-preview.jpg" alt='' />
+                    <div style={{ height: '80%', flex: '1' }}>
+                        <img className='ml-20' style={{ height: '50%' }} src="https://i.ibb.co/c8ghyVT/winter.jpg" alt='' />
                     </div>
-                    <div className='p-10' style={{ flex: '1' }}>
+                    <div className='pr-36 pb-72' style={{ flex: '1' }}>
                         <h1 className="text-6xl font-bold">Winter Sale</h1>
                         <p className='m-10 text-xl font-semibold'>Let's buy accouding to your choice.</p>
                         <button className='btn btn-active btn-secondary'>Shop Now</button>
                     </div>
                 </Slide>
-            </Wrapper>
+            </ForBanner>
             <Arrow direction="right" onClick={() => handleClick("right")}>
                 <ArrowRightOutlinedIcon />
             </Arrow>
