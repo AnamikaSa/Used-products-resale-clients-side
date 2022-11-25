@@ -36,6 +36,13 @@ const Slide = styled.div`
   display: flex;
   align-items: center;
 `;
+// const c= styled.div`
+// width: 100%;
+// height: 100vh;
+// position: relative;
+// overflow: hidden;
+// ${mobile({ display: "none" })}
+// `;
 
 const Banner = () => {
     const [slideIndex, setSlideIndex] = useState(0);
@@ -47,7 +54,7 @@ const Banner = () => {
         }
     };
     return (
-        <div className='flex' style={{ width: '100%', overflow: 'hidden', height: '60vh', position: 'relative' }}>
+        <div className='flex invisible lg:visible' style={{ width: '100%', overflow: 'hidden', height: '60vh', position: 'relative' }}>
             <Arrow direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlinedIcon />
             </Arrow>
