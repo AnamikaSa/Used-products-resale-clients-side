@@ -5,13 +5,17 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+
+    const handleLogin=data=>{
+        console.log(data);
+    }
     
     return (
         <div className='h-[800px] flex justify-center items-center'>
             <div className='w-96 p-7'>
                 <h2 className='text-xl text-center'>Login</h2>
-                 {/* onSubmit={handleSubmit(handleLogin)} */}
-                <form>
+                
+                <form onSubmit={handleSubmit(handleLogin)}>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Email</span></label>
                         <input type="text"
@@ -33,6 +37,7 @@ const Login = () => {
                         {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                     </div>
                     <input className='btn btn-accent w-full' value="Login" type="submit" />
+                    
                     
                 </form>
                 <p>New here??? Then <Link className='text-secondary' to="/signup">Create new Account</Link></p>

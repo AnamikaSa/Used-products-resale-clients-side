@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     const { register, formState: { errors } } = useForm();
-    
+   
     
 
     return (
@@ -37,6 +37,8 @@ const SignUp = () => {
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                     </div>
+                    
+
                 </form>
                 <p>Already have an account <Link className='text-secondary' to="/login">Please Login</Link></p>
                 <div className="divider">OR</div>
