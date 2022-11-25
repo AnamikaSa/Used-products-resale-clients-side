@@ -1,13 +1,26 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthProvider';
 
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const {signIn}= useContext(AuthContext);
+    const[logErr,setLogErr]= useState('');
 
     const handleLogin=data=>{
         console.log(data);
+        setLogErr('');
+        signIn(data.email , data.password)
+        .then(r=>{
+            const user= r.user;
+            console.log(user);
+        })
+        .catch(err=> {
+            console.log(err.message)
+            setLogErr(err.message);
+        });
     }
     
     return (
@@ -38,9 +51,12 @@ const Login = () => {
                     </div>
                     <input className='btn btn-accent w-full' value="Login" type="submit" />
                     
+                    <div>
+                        {logErr && <p className='text-red-700'>{logErr}</p>}
+                    </div>
                     
                 </form>
-                <p>New here??? Then <Link className='text-secondary' to="/signup">Create new Account</Link></p>
+                <p className='mt-5'>New here??? Then <Link className='text-secondary' to="/signup">Create new Account</Link></p>
                 <div className="divider">OR</div>
                 <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
             </div>
