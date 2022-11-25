@@ -6,53 +6,7 @@ import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     const { register, formState: { errors } } = useForm();
-    // const { createUser, updateUser } = useContext(AuthContext);
-    // const [signUpError, setSignUPError] = useState('');
-    // const [createdUserEmail, setCreatedUserEmail] = useState('')
-    // const [token] = useToken(createdUserEmail);
-    // const navigate = useNavigate();
-
-    // if(token){
-    //     navigate('/');
-    // }
-
-    // const handleSignUp = (data) => {
-    //     setSignUPError('');
-    //     createUser(data.email, data.password)
-    //         .then(result => {
-    //             const user = result.user;
-    //             console.log(user);
-    //             toast('User Created Successfully.')
-    //             const userInfo = {
-    //                 displayName: data.name
-    //             }
-    //             updateUser(userInfo)
-    //                 .then(() => {
-    //                     saveUser(data.name, data.email);
-    //                 })
-    //                 .catch(err => console.log(err));
-    //         })
-    //         .catch(error => {
-    //             console.log(error)
-    //             setSignUPError(error.message)
-    //         });
-    // }
-
-    // const saveUser = (name, email) =>{
-    //     const user ={name, email};
-    //     fetch('https://doctors-portal-server-rust.vercel.app/users', {
-    //         method: 'POST',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-    //     .then(res => res.json())
-    //     .then(data =>{
-    //         setCreatedUserEmail(email);
-    //     })
-    // }
-
+    
     
 
     return (

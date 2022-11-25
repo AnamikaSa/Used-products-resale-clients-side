@@ -1,17 +1,16 @@
-
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
-    const { register, formState: { errors },  } = useForm();
+    const { register, formState: { errors }, handleSubmit } = useForm();
     
-
     return (
         <div className='h-[800px] flex justify-center items-center'>
             <div className='w-96 p-7'>
                 <h2 className='text-xl text-center'>Login</h2>
-                {/* onSubmit={handleSubmit(handleLogin)} */}
+                 {/* onSubmit={handleSubmit(handleLogin)} */}
                 <form>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Email</span></label>
@@ -31,14 +30,12 @@ const Login = () => {
                             })}
                             className="input input-bordered w-full max-w-xs" />
                         <label className="label"> <span className="label-text">Forget Password?</span></label>
-                        
+                        {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                     </div>
                     <input className='btn btn-accent w-full' value="Login" type="submit" />
-                    <div>
-                        
-                    </div>
+                    
                 </form>
-                <p>New to Doctors Portal <Link className='text-secondary' to="/signup">Create new Account</Link></p>
+                <p>New here??? Then <Link className='text-secondary' to="/signup">Create new Account</Link></p>
                 <div className="divider">OR</div>
                 <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
             </div>
