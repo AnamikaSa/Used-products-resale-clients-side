@@ -1,18 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, {  } from 'react';
 import { Link } from 'react-router-dom';
 
 
 
 const Categories = () => {
-    const [categoryOption,setcategoryOption]= useState([]);
-    useEffect(()=>{
-        fetch('http://localhost:5000/categories')
-        .then(res=>res.json())
-        .then(data=> 
-            // console.log(data)
-        setcategoryOption(data)
-        )
+    // const [categoryOption,setcategoryOption]= useState([]);
+    const {data: categoryOption=[] }=useQuery({
+        queryKey:['categoryOption'],
+        queryFn: ()=> fetch('http://localhost:5000/categories')
+        .then(res => res.json())
     })
+    // useEffect(()=>{
+    //     fetch('http://localhost:5000/categories')
+    //     .then(res=>res.json())
+    //     .then(data=> 
+    //         // console.log(data)
+    //     setcategoryOption(data)
+    //     )
+    // })
     return (
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 ml-10 mb-5'>
             {
