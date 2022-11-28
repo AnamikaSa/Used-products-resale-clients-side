@@ -21,7 +21,7 @@ const SignUp = () => {
         .then(r=>{
             const user= r.user;
             console.log(user);
-            toast("User Created")
+            toast("User Created");
             const userInfo={
                 displayName:data.name
             }
