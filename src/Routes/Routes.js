@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import AllUsers from "../components/AllUsers";
 import CategoryProducts from "../components/CategoryProducts";
 import Dashboard from "../components/Dashboard";
 import DashboardLayout from "../components/DashboardLayout";
@@ -7,6 +8,7 @@ import Login from "../components/Login";
 import MyBookings from "../components/MyBookings";
 import Signup from "../components/Signup";
 import Main from "../layouts/Main";
+import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
     {
@@ -41,7 +43,12 @@ const router = createBrowserRouter([
                 path:'/dashboard',
                 element:<MyBookings></MyBookings>
             
-            }
+            },
+            {
+                path:'/dashboard/allusers',
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            
+            },
         ]
     }
 
