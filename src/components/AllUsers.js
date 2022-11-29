@@ -3,7 +3,7 @@ import React from 'react';
 import toast from 'react-hot-toast';
 
 const AllUsers = () => {
-    const {data: users = [], refetch} = useQuery({
+    const {data: users = []} = useQuery({
         queryKey: ['users'],
         queryFn: async() =>{
             const res = await fetch('http://localhost:5000/users');
@@ -12,21 +12,21 @@ const AllUsers = () => {
         }
     });
 
-    const handleMakeseller = id => {
-        fetch(`http://localhost:5000/users/seller/${id}`, {
-            method: 'PUT', 
-            headers: {
-                authorization: `bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-        .then(res => res.json())
-        .then(data => {
-            if(data.modifiedCount > 0){
-                toast.success('verify successful.')
-                refetch();
-            }
-        })
-    }
+    // const handleMakeseller = id => {
+    //     fetch(`http://localhost:5000/users/seller/${id}`, {
+    //         method: 'PUT', 
+    //         headers: {
+    //             authorization: `bearer ${localStorage.getItem('accessToken')}`
+    //         }
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         if(data.modifiedCount > 0){
+    //             toast.success('verify successful.')
+    //             refetch();
+    //         }
+    //     })
+    // }
 
     return (
         <div>
@@ -38,18 +38,16 @@ const AllUsers = () => {
         <th></th>
         <th>Name</th>
         <th>Email</th>
-        <th>Sellers</th>
-        <th>Delete</th>
+        <th>Sellers/Buyers</th>
       </tr>
     </thead>
     <tbody>
       {
         users.map((user, i) =><tr key={user._id}>
             <th>{i+1}</th>
-            <td>{user?.role !== 'admin'} {user.name}</td>
+            <td> {user.name}</td>
             <td>{user.email}</td>
-            <td>{ user?.role !== 'seller' && <button onClick={() => handleMakeseller(user._id)} className='btn btn-xs btn-primary'>Make Verify</button>}</td>
-            <td><button className='btn btn-xs btn-danger'>Delete</button></td>
+            <td>{ user.role}</td>
           </tr>)
       }
       

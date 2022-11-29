@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import AddProduct from "../components/AddProduct";
 import AllUsers from "../components/AllUsers";
 import CategoryProducts from "../components/CategoryProducts";
 import Dashboard from "../components/Dashboard";
@@ -6,6 +7,7 @@ import DashboardLayout from "../components/DashboardLayout";
 import Home from "../components/Home";
 import Login from "../components/Login";
 import MyBookings from "../components/MyBookings";
+import MyProducts from "../components/MyProducts";
 import Signup from "../components/Signup";
 import Main from "../layouts/Main";
 import AdminRoute from "./AdminRoute";
@@ -41,7 +43,19 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/dashboard',
-                element:<MyBookings></MyBookings>
+                element:<MyBookings></MyBookings>,
+            
+            },
+            {
+                path:'/dashboard/myproducts',
+                element:<MyProducts></MyProducts>,
+                // loader:({params})=>fetch(`http://localhost:5000/categories/${params.id}`)
+            
+            },
+            {
+                path:'/dashboard/addproduct',
+                element:<AddProduct></AddProduct>,
+                
             
             },
             {
