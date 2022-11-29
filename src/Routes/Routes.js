@@ -11,9 +11,14 @@ import MyProducts from "../components/MyProducts";
 import Signup from "../components/Signup";
 import Main from "../layouts/Main";
 import AdminRoute from "./AdminRoute";
+import SellerRoute from "./SellerRoute";
+import BuyerRoute from "./BuyerRoute";
 import PrivateRoute from "./PrivateRoute";
 import Advertise from '../components/Advertise';
 import BookingModal from '../components/BookingModal';
+import AllSellers from "../components/AllSellers";
+import AllBuyers from "../components/AllBuyers";
+import Blog from "../components/Blog";
 const router = createBrowserRouter([
     {
         path:'/',
@@ -35,6 +40,11 @@ const router = createBrowserRouter([
             {
                 path:'/modal',
                 element:<PrivateRoute><BookingModal></BookingModal></PrivateRoute>
+            },
+            {
+                path:'/blog',
+                element:<Blog></Blog>
+
             },
             
             {
@@ -72,6 +82,16 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/allusers',
                 element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            
+            },
+            {
+                path:'/dashboard/allsellers',
+                element: <AdminRoute><AllSellers></AllSellers></AdminRoute>
+            
+            },
+            {
+                path:'/dashboard/allbuyers',
+                element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
             
             },
         ]

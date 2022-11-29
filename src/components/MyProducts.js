@@ -31,14 +31,6 @@ const MyProducts = () => {
                             <p className='font-bold'>seller: <span className='text-secondary'> {category.Selleremail}</span></p>
                             <div className="card-actions justify-end">
                             <label htmlFor="booking-modal" className="btn btn-primary" >Delete</label>
-                                {/* {
-                                    !isSeller ?
-                                    <label htmlFor="booking-modal" className="btn btn-primary" onClick={()=> setCategory(category)} >Shop It Now</label>
-                                    :
-                                    <>
-                                    <label htmlFor="booking-modal" className="btn btn-primary" onClick={()=> setCategory(category)} disabled>Your Are not buyer</label>
-                                    </>
-                                } */}
                                 
                             </div>
                         </div>

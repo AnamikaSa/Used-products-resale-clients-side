@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 
 const AllUsers = () => {
     const {data: users = []} = useQuery({
@@ -38,7 +38,7 @@ const AllUsers = () => {
         <th></th>
         <th>Name</th>
         <th>Email</th>
-        <th>Sellers/Buyers</th>
+        <th>Role</th>
       </tr>
     </thead>
     <tbody>

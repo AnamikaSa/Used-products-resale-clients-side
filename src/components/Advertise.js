@@ -84,8 +84,8 @@ const Advertise = () => {
                             <p className='font-bold'>seller: <span className='text-secondary'> {category.Selleremail}</span></p>
                             <div className="card-actions justify-end">
                             {
-                                    isSeller && isAdmin && isBuyer ?
-                                    <label htmlFor="booking-modal" className="btn btn-primary" onClick={()=> products(category)}>Shop It</label>
+                                    user?.email ?
+                                    <label htmlFor="booking-modal" className="btn btn-primary" onClick={()=> products(category)} >Shop It</label>
                                     :
                                     <>
                                     <label htmlFor="booking-modal" className="btn btn-primary" onClick={()=> products(category)} disabled>Login first / You are not buyer</label>
