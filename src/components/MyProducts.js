@@ -28,6 +28,7 @@ const MyProducts = () => {
                             <p className='font-bold'>Resale Price: <span className='text-secondary'>{category.ResalePrice}</span></p>
                             
                             <p className='font-bold'>Location: <span className='text-secondary'> {category.location}</span></p>
+                            <p className='font-bold'>seller: <span className='text-secondary'> {category.Selleremail}</span></p>
                             <div className="card-actions justify-end">
                             <label htmlFor="booking-modal" className="btn btn-primary" >Delete</label>
                                 {/* {

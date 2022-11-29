@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { format } from 'date-fns'
+import { format } from 'date-fns';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../context/AuthProvider';
 
 const BookingModal = ({c, setCategory}) => {
 
-    const { name,Piece } = c;
+    const { name} = c;
     const [selectedDate, setSelectedDate] = useState(new Date());
     const date = format(selectedDate, 'PP');
     const { user } = useContext(AuthContext);
@@ -14,7 +14,6 @@ const BookingModal = ({c, setCategory}) => {
         event.preventDefault();
         const form = event.target;
         const Username = form.Username.value;
-        const Piece= form.piece.value;
         const email = form.email.value;
         const phone = form.phone.value;
 
@@ -22,7 +21,6 @@ const BookingModal = ({c, setCategory}) => {
         const booking = {
             bookingDate: date,
             productName: name,
-            Piece: Piece,
             Username: Username,
             email,
             phone,
@@ -64,8 +62,6 @@ const BookingModal = ({c, setCategory}) => {
                     {/*   */}
                     <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-10'>
                         <input type="text" disabled value={date} className="input w-full input-bordered " />
-                        Piece:
-                        <input name="piece" type="text" disabled value={Piece} className="input w-full input-bordered" />
 
                         <input name="Username" type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered" />
                         <input name="email" type="email" defaultValue={user?.email} disabled placeholder="Email Address" className="input w-full input-bordered" />

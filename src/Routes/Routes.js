@@ -12,6 +12,8 @@ import Signup from "../components/Signup";
 import Main from "../layouts/Main";
 import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
+import Advertise from '../components/Advertise';
+import BookingModal from '../components/BookingModal';
 const router = createBrowserRouter([
     {
         path:'/',
@@ -31,10 +33,19 @@ const router = createBrowserRouter([
             },
             
             {
+                path:'/modal',
+                element:<PrivateRoute><BookingModal></BookingModal></PrivateRoute>
+            },
+            
+            {
                 path:'/categories/:id',
                 element:<PrivateRoute><CategoryProducts></CategoryProducts></PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/categories/${params.id}`)
             },
+            {
+                path:'/advertise',
+                element:<Advertise></Advertise>
+            }
         ]
     },
     {
