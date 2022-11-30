@@ -1,5 +1,5 @@
 # This is a resale site for cloths: https://products-resale-anamikasa.web.app/
-peoplw can can secenod hand cloths easily.
+people can buy secend hand cloths easily.
 
 ## Here:
 ### --Used React Node js for backend
