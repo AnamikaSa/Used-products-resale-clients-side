@@ -19,6 +19,7 @@ import BookingModal from '../components/BookingModal';
 import AllSellers from "../components/AllSellers";
 import AllBuyers from "../components/AllBuyers";
 import Blog from "../components/Blog";
+import Payment from "../components/Payment";
 const router = createBrowserRouter([
     {
         path:'/',
@@ -92,6 +93,12 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/allbuyers',
                 element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
+            
+            },
+            {
+                path:'/dashboard/payment/:id',
+                element: <BuyerRoute><Payment></Payment></BuyerRoute>,
+                loader:({params})=> fetch(`http://localhost:5000/bookings/${params.id}`)
             
             },
         ]

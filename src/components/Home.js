@@ -12,7 +12,7 @@ const Home = () => {
             <Categories></Categories>
             <h1 className='font-bold text-4xl mb-14 mt-10 font-sans'>Advertise Products...</h1>
             <Advertise></Advertise>
-            <h1 className='font-bold text-4xl mb-10 mt-10 font-sans'>FQA...</h1>
+            <h1 className='font-bold text-4xl mt-10 font-sans'>FQA...</h1>
             <Blog></Blog>
         </div>
     );

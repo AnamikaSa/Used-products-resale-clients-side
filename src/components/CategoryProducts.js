@@ -11,6 +11,8 @@ const CategoryProducts = () => {
     const [c, setCategory]= useState(null);
     const { user } = useContext(AuthContext);
     const [isSeller]= useSeller(user?.email);
+
+    
     
     // console.log(p);
     return (
