@@ -1,3 +1,19 @@
+# This is a resale site for cloths: https://products-resale-anamikasa.web.app/
+peoplw can can secenod hand cloths easily.
+
+## Here:
+### --Used React Node js for backend
+### --For foront end design used DaisyUI Tawilnd CSS
+### --JWT are used for safty
+### --Here there Users category are used Admin,Seller and Buyer
+### --Used JQuery for API 
+### --Vercel is used for Server site and Firebase deploy for Client side
+### `--Admin id: admin@admin.com`
+### `--Password for admin :1234567`
+
+## `N.B: Shop from category not from Advertise`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
