@@ -66,7 +66,7 @@ const Advertise = () => {
 
     return (
         <div>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-72 pl-28 ml-10 mb-5'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 ml-20 mb-5'>
             {
                 products.map(category => <div key={category._id}
                 >
@@ -81,7 +81,7 @@ const Advertise = () => {
                             <p className='font-bold'>Resale Price: <span className='text-secondary'>{category.ResalePrice}</span></p>
                             
                             <p className='font-bold'>Location: <span className='text-secondary'> {category.location}</span></p>
-                            <p className='font-bold'>seller: <span className='text-secondary'> {category.Selleremail}</span></p>
+                            <p className='font-bold'>seller: <span className='text-secondary'> {category.email}</span></p>
                             <div className="card-actions justify-end">
                             {
                                     user?.email ?

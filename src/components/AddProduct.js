@@ -1,14 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../components/Loading';
+import { AuthContext } from '../context/AuthProvider';
 
 const AddProduct = () => {
+    const { user } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     
-    const imageHostKey ='f1256e402477da7d24553b05b0f46126';
+    const imageHostKey =process.env.REACT_APP_imgbb_key;
 
     const navigate = useNavigate();
     
@@ -36,7 +38,7 @@ const AddProduct = () => {
                 console.log(imgData.data.url);
                 const products = {
                     title: data.name, 
-                    Selleremail: data.email,
+                    email: data.email,
                     category: data.cate,
                     OriginalPrice: data.OriginalPrice,
                     ResalePrice: data.ResalePrice,
@@ -80,7 +82,7 @@ const AddProduct = () => {
                     {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
                 </div>
                 <div className="form-control w-full max-w-xs">
-                    <label className="label"> <span className="label-text" placeholder='Seller Email'>Email</span></label>
+                    <label className="label"> <span className="label-text"  defaultValue={user?.email}>Seller Email</span></label>
                     <input type="email" {...register("email", {
                         required: true
                     })} className="input input-bordered w-full max-w-xs" />
@@ -116,12 +118,9 @@ const AddProduct = () => {
                     <select 
                     {...register('cate')}
                     className="select input-bordered w-full max-w-xs">
-                        {
-                            cate.map(c => <option
-                                key={c._id}
-                            >{c.title}</option>)
-                        }
-                        
+                        <option value='638264eb7a83f714cfc28450'>Female Zone</option>
+                        <option value='6382658e7a83f714cfc33b55'>Kids Zone</option>
+                        <option value='638266927a83f714cfc46001'>Male Zone</option>
                         
                     </select>
                 </div>
