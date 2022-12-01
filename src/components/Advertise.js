@@ -17,7 +17,7 @@ const Advertise = () => {
 
     const { data: products = [] } = useQuery({
         queryKey: ['products'],
-        queryFn: () => fetch('http://localhost:5000/addproduct')
+        queryFn: () => fetch('https://used-products-resale-market-server-phi.vercel.app/addproduct')
             .then(res => res.json())
     })
 
@@ -41,7 +41,7 @@ const Advertise = () => {
         
 
     
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://used-products-resale-market-server-phi.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

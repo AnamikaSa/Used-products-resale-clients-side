@@ -6,7 +6,7 @@ import { AuthContext } from '../context/AuthProvider';
 
 const MyProducts = () => {
     const { user } = useContext(AuthContext);
-    const url = `http://localhost:5000/addproduct?email=${user?.email}`;
+    const url = `https://used-products-resale-market-server-phi.vercel.app/addproduct?email=${user?.email}`;
 
     const { data: products = [] } = useQuery({
         queryKey: ['products', user?.email],
@@ -24,7 +24,7 @@ const MyProducts = () => {
         const agree =window.confirm(`Are you sure to delete this?? : ${category.title}`)
         if(agree){
             console.log("deleting this: " ,category._id);
-            fetch(`http://localhost:5000/users/${category?._id}`,{
+            fetch(`https://used-products-resale-market-server-phi.vercel.app/users/${category?._id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())

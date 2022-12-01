@@ -51,7 +51,7 @@ const router = createBrowserRouter([
             {
                 path:'/categories/:id',
                 element:<PrivateRoute><CategoryProducts></CategoryProducts></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/categories/${params.id}`)
+                loader:({params})=>fetch(`https://used-products-resale-market-server-phi.vercel.app/categories/${params.id}`)
             },
             {
                 path:'/advertise',
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/myproducts',
                 element:<MyProducts></MyProducts>,
-                // loader:({params})=>fetch(`http://localhost:5000/categories/${params.id}`)
+                // loader:({params})=>fetch(`https://used-products-resale-market-server-phi.vercel.app/categories/${params.id}`)
             
             },
             {
@@ -98,7 +98,7 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/payment/:id',
                 element: <BuyerRoute><Payment></Payment></BuyerRoute>,
-                loader:({params})=> fetch(`http://localhost:5000/bookings/${params.id}`)
+                loader:({params})=> fetch(`https://used-products-resale-market-server-phi.vercel.app/bookings/${params.id}`)
             
             },
         ]

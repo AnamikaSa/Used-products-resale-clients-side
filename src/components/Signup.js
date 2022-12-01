@@ -24,14 +24,14 @@ const SignUp = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users');
+            const res = await fetch('https://used-products-resale-market-server-phi.vercel.app/users');
             const data = await res.json();
             return data;
         }
     });
 
     const handleMakeseller = id => {
-        fetch(`http://localhost:5000/users/seller/${id}`, {
+        fetch(`https://used-products-resale-market-server-phi.vercel.app/users/seller/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -72,7 +72,7 @@ const SignUp = () => {
 
     const saveUser = (name, email, select) => {
         const user = { name, email, role: select };
-        fetch('http://localhost:5000/users', {
+        fetch('https://used-products-resale-market-server-phi.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

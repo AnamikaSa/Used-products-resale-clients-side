@@ -8,11 +8,11 @@ const Categories = () => {
     // const [categoryOption,setcategoryOption]= useState([]);
     const {data: categoryOption=[] }=useQuery({
         queryKey:['categoryOption'],
-        queryFn: ()=> fetch('http://localhost:5000/categories')
+        queryFn: ()=> fetch('https://used-products-resale-market-server-phi.vercel.app/categories')
         .then(res => res.json())
     })
     // useEffect(()=>{
-    //     fetch('http://localhost:5000/categories')
+    //     fetch('https://used-products-resale-market-server-phi.vercel.app/categories')
     //     .then(res=>res.json())
     //     .then(data=> 
     //         // console.log(data)

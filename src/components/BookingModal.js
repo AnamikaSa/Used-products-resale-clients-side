@@ -31,7 +31,7 @@ const BookingModal = ({c, setCategory}) => {
         
 
     
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://used-products-resale-market-server-phi.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
