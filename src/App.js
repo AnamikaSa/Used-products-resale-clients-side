@@ -1,4 +1,4 @@
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import { RouterProvider } from 'react-router-dom';
 import {Toaster} from 'react-hot-toast';
 import './App.css';

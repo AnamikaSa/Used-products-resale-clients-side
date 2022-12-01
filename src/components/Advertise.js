@@ -28,7 +28,7 @@ const Advertise = () => {
         const Username = form.Username.value;
         const email = form.email.value;
         const phone = form.phone.value;
-
+        const price= form.price.value;
         
         const booking = {
             bookingDate: date,
@@ -36,6 +36,7 @@ const Advertise = () => {
             Username: Username,
             email,
             phone,
+            price
         }
         console.log(booking);
         
@@ -116,6 +117,8 @@ const Advertise = () => {
 
                         <input name="Username" type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered" />
                         <input name="email" type="email" defaultValue={user?.email} disabled placeholder="Email Address" className="input w-full input-bordered" />
+
+                        <input name="price" type="text" placeholder="Include Price" className="input w-full input-bordered" />
                         <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
                         <br />
                         <input className='btn btn-accent w-full' type="submit" value="Submit" />
